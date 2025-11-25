@@ -6,7 +6,6 @@
     android:gravity="center"
     android:padding="20dp">
 
-    <!-- Question affichée -->
     <TextView
         android:id="@+id/question"
         android:layout_width="match_parent"
@@ -16,7 +15,6 @@
         android:gravity="center_horizontal"
         android:layout_marginBottom="30dp"/>
 
-    <!-- Boutons de réponse -->
     <LinearLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"

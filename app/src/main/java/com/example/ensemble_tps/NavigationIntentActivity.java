@@ -24,53 +24,35 @@ public class NavigationIntentActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_navigation_intent);
-
         listView = findViewById(R.id.listviewnavigation);
-
-        // Préparation des données
         listItem = new ArrayList<>();
-
         listItem.add(new ItemOffice("Word", "Utilisez-vous Word ?", R.drawable.ic_word));
         listItem.add(new ItemOffice("Excel", "Utilisez-vous Excel ?", R.drawable.ic_excel));
         listItem.add(new ItemOffice("PowerPoint", "Utilisez-vous PowerPoint ?", R.drawable.ic_powerpoint));
         listItem.add(new ItemOffice("Outlook", "Utilisez-vous Outlook ?", R.drawable.ic_outlook));
-
-        // Adaptateur personnalisé
         CustomAdapter adapter = new CustomAdapter(this, listItem);
         listView.setAdapter(adapter);
-
-        // Clic sur un item : navigation vers QuestionActivity
         listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 ItemOffice item = listItem.get(position);
-
-                // Création du Bundle pour transmettre les données
                 Bundle bundle = new Bundle();
                 bundle.putString("titre", item.titre);
                 bundle.putString("description", item.description);
                 bundle.putInt("position", position);
-
-                // Création de l'Intent
                 Intent intent = new Intent(NavigationIntentActivity.this, QuestionActivity.class);
                 intent.putExtras(bundle);
-
-                // Lancement de l'activité avec attente de résultat
                 startActivityForResult(intent, 1);
             }
         });
     }
-
-    // Réception du résultat de QuestionActivity
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
-
         if (requestCode == 1) {
             AlertDialog.Builder adb = new AlertDialog.Builder(this);
             adb.setTitle("Votre Réponse");
             adb.setPositiveButton("Ok", null);
-
             switch (resultCode) {
                 case 1: adb.setMessage("Vous utilisez Word."); break;
                 case 2: adb.setMessage("Vous utilisez Excel."); break;
@@ -81,67 +63,52 @@ public class NavigationIntentActivity extends AppCompatActivity {
                 case 7: adb.setMessage("Vous n'utilisez pas PowerPoint."); break;
                 case 8: adb.setMessage("Vous n'utilisez pas Outlook."); break;
             }
-
             adb.show();
         }
     }
-
-    // Classe interne pour représenter un item
     class ItemOffice {
         String titre;
         String description;
         int img;
-
         ItemOffice(String titre, String description, int img) {
             this.titre = titre;
             this.description = description;
             this.img = img;
         }
     }
-
-    // Adapter personnalisé
     class CustomAdapter extends BaseAdapter {
         Context context;
         ArrayList<ItemOffice> data;
         LayoutInflater inflater;
-
         CustomAdapter(Context context, ArrayList<ItemOffice> data) {
             this.context = context;
             this.data = data;
             this.inflater = LayoutInflater.from(context);
         }
-
         @Override
         public int getCount() {
             return data.size();
         }
-
         @Override
         public Object getItem(int position) {
             return data.get(position);
         }
-
         @Override
         public long getItemId(int position) {
             return position;
         }
-
         @Override
         public View getView(int position, View convertView, ViewGroup parent) {
             if (convertView == null) {
                 convertView = inflater.inflate(R.layout.affichageitem, parent, false);
             }
-
             ImageView img = convertView.findViewById(R.id.img);
             TextView titre = convertView.findViewById(R.id.titre);
             TextView description = convertView.findViewById(R.id.description);
-
             ItemOffice item = data.get(position);
-
             img.setImageResource(item.img);
             titre.setText(item.titre);
             description.setText(item.description);
-
             return convertView;
         }
     }

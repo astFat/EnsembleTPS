@@ -6,7 +6,6 @@
     android:background="#2E2E2E"
     android:padding="16dp">
 
-    <!-- Écran -->
     <EditText
         android:id="@+id/ecran"
         android:layout_width="match_parent"
@@ -22,7 +21,6 @@
         android:focusable="false"
         android:cursorVisible="false" />
 
-    <!-- Ligne 1 -->
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="0dp"
@@ -71,13 +69,11 @@
             android:layout_margin="4dp" />
     </LinearLayout>
 
-    <!-- Ligne 2 -->
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_weight="1"
         android:orientation="horizontal">
-
         <Button
             android:id="@+id/btn4"
             android:layout_width="0dp"
@@ -120,7 +116,6 @@
             android:layout_margin="4dp" />
     </LinearLayout>
 
-    <!-- Ligne 3 -->
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="0dp"
@@ -168,14 +163,11 @@
             android:background="#707070"
             android:layout_margin="4dp" />
     </LinearLayout>
-
-    <!-- Ligne 4 -->
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_weight="1"
         android:orientation="horizontal">
-
         <Button
             android:id="@+id/btn0"
             android:layout_width="0dp"
@@ -219,7 +211,6 @@
             android:layout_margin="4dp" />
     </LinearLayout>
 
-    <!-- Ligne 5 -->
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="0dp"

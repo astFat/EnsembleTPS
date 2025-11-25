@@ -14,34 +14,24 @@ public class ProjetClickActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-
-        // Création du layout principal
         LinearLayout layout = new LinearLayout(this);
         layout.setOrientation(LinearLayout.VERTICAL);
         layout.setGravity(Gravity.CENTER);
         layout.setPadding(40, 40, 40, 40);
-
-        // TextView d'instruction
         TextView tvInstruction = new TextView(this);
         tvInstruction.setText("ENTREZ VOTRE NOM !");
         tvInstruction.setTextSize(20);
         tvInstruction.setGravity(Gravity.CENTER);
         layout.addView(tvInstruction);
-
-        // EditText pour la saisie
         final EditText editText = new EditText(this);
         editText.setHint("Répondre ici");
         editText.setGravity(Gravity.CENTER);
         layout.addView(editText);
-
-        // TextView pour afficher le résultat
         final TextView tvResult = new TextView(this);
         tvResult.setTextSize(18);
         tvResult.setGravity(Gravity.CENTER);
         tvResult.setPadding(0, 20, 0, 0);
         layout.addView(tvResult);
-
-        // Bouton Afficher
         final Button btnAfficher = new Button(this);
         btnAfficher.setText("AFFICHER");
         btnAfficher.setOnClickListener(new View.OnClickListener() {
@@ -53,7 +43,6 @@ public class ProjetClickActivity extends AppCompatActivity {
             }
         });
         layout.addView(btnAfficher);
-
         setContentView(layout);
     }
 }

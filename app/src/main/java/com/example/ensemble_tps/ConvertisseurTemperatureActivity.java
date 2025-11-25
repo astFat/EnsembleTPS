@@ -25,17 +25,11 @@ public class ConvertisseurTemperatureActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-
-        // Changer la couleur de fond
         getWindow().getDecorView().setBackgroundColor(Color.CYAN);
-
-        // Layout principal
         LinearLayout layout = new LinearLayout(this);
         layout.setOrientation(LinearLayout.VERTICAL);
         layout.setGravity(Gravity.TOP);
         layout.setPadding(40, 40, 40, 40);
-
-        // Titre stylisé
         TextView tvTitre = new TextView(this);
         tvTitre.setText("Convertisseur\nCelsius - Fahrenheit");
         tvTitre.setTextColor(Color.RED);
@@ -43,68 +37,51 @@ public class ConvertisseurTemperatureActivity extends AppCompatActivity {
         tvTitre.setTypeface(null, Typeface.BOLD_ITALIC);
         tvTitre.setGravity(Gravity.CENTER);
         tvTitre.setPadding(0, 0, 0, 20);
-        tvTitre.setMaxLines(2);  // ✅ Permet 2 lignes
+        tvTitre.setMaxLines(2);
         layout.addView(tvTitre);
-
-        // Champ de saisie
         etTemperature = new EditText(this);
         etTemperature.setHint("Température");
         etTemperature.setInputType(android.text.InputType.TYPE_CLASS_NUMBER |
                 android.text.InputType.TYPE_NUMBER_FLAG_DECIMAL |
                 android.text.InputType.TYPE_NUMBER_FLAG_SIGNED);
         layout.addView(etTemperature);
-
-        // RadioGroup pour direction de conversion
         radioGroup = new RadioGroup(this);
         radioGroup.setOrientation(RadioGroup.VERTICAL);
         radioGroup.setPadding(0, 20, 0, 20);
 
         rbCelsiusToFahr = new RadioButton(this);
         rbCelsiusToFahr.setText("Celsius → Fahrenheit");
-        rbCelsiusToFahr.setId(View.generateViewId());  // ✅ Génère un ID unique
+        rbCelsiusToFahr.setId(View.generateViewId());
         radioGroup.addView(rbCelsiusToFahr);
-
         rbFahrToCelsius = new RadioButton(this);
         rbFahrToCelsius.setText("Fahrenheit → Celsius");
-        rbFahrToCelsius.setId(View.generateViewId());  // ✅ Génère un ID unique
+        rbFahrToCelsius.setId(View.generateViewId());
         radioGroup.addView(rbFahrToCelsius);
-
-        // Sélectionner le premier par défaut
-        radioGroup.check(rbCelsiusToFahr.getId());  // ✅ Méthode recommandée
-
+        radioGroup.check(rbCelsiusToFahr.getId());
         layout.addView(radioGroup);
-
-        // TextView résultat
         tvResultat = new TextView(this);
         tvResultat.setText("Résultat : ");
         tvResultat.setTextSize(18);
         tvResultat.setPadding(0, 20, 0, 20);
         layout.addView(tvResultat);
-
-        // Bouton Convertir
         Button btnConvertir = new Button(this);
         btnConvertir.setText("Convertir");
         btnConvertir.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 String input = etTemperature.getText().toString().trim();
-
                 if (input.isEmpty()) {
                     Toast.makeText(ConvertisseurTemperatureActivity.this,
                             "Veuillez entrer une température !", Toast.LENGTH_SHORT).show();
                     return;
                 }
-
                 try {
                     double valeur = Double.parseDouble(input);
                     double resultat;
-
                     if (rbCelsiusToFahr.isChecked()) {
-                        // °F = (°C × 9/5) + 32
                         resultat = (valeur * 9.0 / 5.0) + 32;
                         tvResultat.setText(String.format("Résultat : %.2f °F", resultat));
                     } else if (rbFahrToCelsius.isChecked()) {
-                        // °C = (°F - 32) / 1.8
                         resultat = (valeur - 32) / 1.8;
                         tvResultat.setText(String.format("Résultat : %.2f °C", resultat));
                     } else {

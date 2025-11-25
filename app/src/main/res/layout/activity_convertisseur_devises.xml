@@ -12,7 +12,6 @@
         android:padding="20dp"
         android:gravity="center_horizontal">
 
-        <!-- Titre -->
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -24,7 +23,6 @@
             android:layout_marginTop="10dp"
             android:layout_marginBottom="30dp" />
 
-        <!-- Label MAD -->
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -33,7 +31,6 @@
             android:textColor="#666666"
             android:layout_marginBottom="8dp" />
 
-        <!-- Champ MAD -->
         <EditText
             android:id="@+id/etMAD"
             android:layout_width="match_parent"
@@ -44,7 +41,6 @@
             android:background="#E0E0E0"
             android:layout_marginBottom="25dp" />
 
-        <!-- Bloc Résultat USD -->
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -67,13 +63,11 @@
                 android:id="@+id/tvUSD"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="USD : 0.00"
                 android:textSize="18sp"
                 android:textColor="#444444"
                 android:textStyle="bold"/>
         </LinearLayout>
 
-        <!-- Bloc Résultat EUR -->
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -96,13 +90,11 @@
                 android:id="@+id/tvEUR"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="EUR : 0.00"
                 android:textSize="18sp"
                 android:textColor="#444444"
                 android:textStyle="bold"/>
         </LinearLayout>
 
-        <!-- Bloc Résultat MAD -->
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -125,13 +117,11 @@
                 android:id="@+id/tvMAD"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="MAD : 0.00"
                 android:textSize="18sp"
                 android:textColor="#444444"
                 android:textStyle="bold"/>
         </LinearLayout>
 
-        <!-- Bouton Convertir -->
         <Button
             android:id="@+id/btnConvertir"
             android:layout_width="match_parent"
@@ -143,7 +133,6 @@
             android:padding="14dp"
             android:layout_marginBottom="12dp"/>
 
-        <!-- Bouton Réinitialiser -->
         <Button
             android:id="@+id/btnReset"
             android:layout_width="match_parent"

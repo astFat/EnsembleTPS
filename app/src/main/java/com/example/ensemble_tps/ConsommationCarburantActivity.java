@@ -18,49 +18,35 @@ public class ConsommationCarburantActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-
-        // Constantes de conversion
         final double GALLON_TO_LITERS = 3.785;
         final double MILE_TO_KM = 1.609;
-
-        // Layout principal
         LinearLayout layout = new LinearLayout(this);
         layout.setOrientation(LinearLayout.VERTICAL);
         layout.setGravity(Gravity.TOP);
         layout.setPadding(40, 40, 40, 40);
-
-        // Titre
         TextView tvTitre = new TextView(this);
         tvTitre.setText("Convertisseur de Consommation\nVéhicule");
         tvTitre.setTextSize(24);
         tvTitre.setGravity(Gravity.CENTER_HORIZONTAL);
         tvTitre.setPadding(0, 0, 0, 20);
-        tvTitre.setMaxLines(2);  // ✅ AJOUTÉ
-        tvTitre.setSingleLine(false);  // ✅ AJOUTÉ
-
+        tvTitre.setMaxLines(2);
+        tvTitre.setSingleLine(false);
         LinearLayout.LayoutParams paramsTitle = new LinearLayout.LayoutParams(
                 LinearLayout.LayoutParams.MATCH_PARENT,
                 LinearLayout.LayoutParams.WRAP_CONTENT
         );
-        tvTitre.setLayoutParams(paramsTitle);  // ✅ AJOUTÉ
-
+        tvTitre.setLayoutParams(paramsTitle);
         layout.addView(tvTitre);
-
-        // Champ de saisie
         etSaisie = new EditText(this);
         etSaisie.setHint("Entrez la valeur");
         etSaisie.setInputType(android.text.InputType.TYPE_CLASS_NUMBER |
                 android.text.InputType.TYPE_NUMBER_FLAG_DECIMAL);
         layout.addView(etSaisie);
-
-        // TextView résultat
         tvResultat = new TextView(this);
         tvResultat.setText("Résultat : ");
         tvResultat.setTextSize(18);
         tvResultat.setPadding(0, 20, 0, 20);
         layout.addView(tvResultat);
-
-        // Bouton MPG -> L/100km
         Button btnMpgToL100 = new Button(this);
         btnMpgToL100.setText("MPG → L/100km");
         btnMpgToL100.setOnClickListener(new View.OnClickListener() {
@@ -77,8 +63,6 @@ public class ConsommationCarburantActivity extends AppCompatActivity {
             }
         });
         layout.addView(btnMpgToL100);
-
-        // Bouton L/100km -> MPG
         Button btnL100ToMpg = new Button(this);
         btnL100ToMpg.setText("L/100km → MPG");
         btnL100ToMpg.setOnClickListener(new View.OnClickListener() {
@@ -95,8 +79,6 @@ public class ConsommationCarburantActivity extends AppCompatActivity {
             }
         });
         layout.addView(btnL100ToMpg);
-
-        // Bouton Effacer
         Button btnEffacer = new Button(this);
         btnEffacer.setText("Effacer");
         btnEffacer.setOnClickListener(new View.OnClickListener() {
@@ -107,7 +89,6 @@ public class ConsommationCarburantActivity extends AppCompatActivity {
             }
         });
         layout.addView(btnEffacer);
-
         setContentView(layout);
     }
 }
