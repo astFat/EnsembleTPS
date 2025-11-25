@@ -1,0 +1,159 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#F2F2F2"
+    android:fillViewport="true">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="20dp"
+        android:gravity="center_horizontal">
+
+        <!-- Titre -->
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Convertisseur de Devises"
+            android:textSize="24sp"
+            android:textStyle="bold"
+            android:textColor="#555555"
+            android:gravity="center"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="30dp" />
+
+        <!-- Label MAD -->
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Dirham Marocain (MAD)"
+            android:textSize="16sp"
+            android:textColor="#666666"
+            android:layout_marginBottom="8dp" />
+
+        <!-- Champ MAD -->
+        <EditText
+            android:id="@+id/etMAD"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Montant en MAD"
+            android:inputType="numberDecimal"
+            android:padding="14dp"
+            android:background="#E0E0E0"
+            android:layout_marginBottom="25dp" />
+
+        <!-- Bloc Résultat USD -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center_vertical"
+            android:padding="12dp"
+            android:background="#FFFFFF"
+            android:layout_marginBottom="12dp"
+            android:elevation="2dp">
+
+            <ImageView
+                android:id="@+id/imgUSD"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_marginEnd="15dp"
+                android:src="@drawable/ic_usd"
+                android:contentDescription="Drapeau USA"/>
+
+            <TextView
+                android:id="@+id/tvUSD"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="USD : 0.00"
+                android:textSize="18sp"
+                android:textColor="#444444"
+                android:textStyle="bold"/>
+        </LinearLayout>
+
+        <!-- Bloc Résultat EUR -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center_vertical"
+            android:padding="12dp"
+            android:background="#FFFFFF"
+            android:layout_marginBottom="12dp"
+            android:elevation="2dp">
+
+            <ImageView
+                android:id="@+id/imgEUR"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_marginEnd="15dp"
+                android:src="@drawable/ic_eur"
+                android:contentDescription="Drapeau Europe"/>
+
+            <TextView
+                android:id="@+id/tvEUR"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="EUR : 0.00"
+                android:textSize="18sp"
+                android:textColor="#444444"
+                android:textStyle="bold"/>
+        </LinearLayout>
+
+        <!-- Bloc Résultat MAD -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center_vertical"
+            android:padding="12dp"
+            android:background="#FFFFFF"
+            android:layout_marginBottom="30dp"
+            android:elevation="2dp">
+
+            <ImageView
+                android:id="@+id/imgMAD"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_marginEnd="15dp"
+                android:src="@drawable/ic_mad"
+                android:contentDescription="Drapeau Maroc"/>
+
+            <TextView
+                android:id="@+id/tvMAD"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="MAD : 0.00"
+                android:textSize="18sp"
+                android:textColor="#444444"
+                android:textStyle="bold"/>
+        </LinearLayout>
+
+        <!-- Bouton Convertir -->
+        <Button
+            android:id="@+id/btnConvertir"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="CONVERTIR"
+            android:textSize="18sp"
+            android:textColor="#FFFFFF"
+            android:backgroundTint="#9E9E9E"
+            android:padding="14dp"
+            android:layout_marginBottom="12dp"/>
+
+        <!-- Bouton Réinitialiser -->
+        <Button
+            android:id="@+id/btnReset"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="RÉINITIALISER"
+            android:textSize="18sp"
+            android:textColor="#FFFFFF"
+            android:backgroundTint="#757575"
+            android:padding="14dp"
+            android:layout_marginBottom="20dp"/>
+
+    </LinearLayout>
+</ScrollView>
