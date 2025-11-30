@@ -27,7 +27,7 @@ public class SaisieEtudiantActivity extends AppCompatActivity {
         scrollView.setBackgroundColor(0xFFF5F5F5);
         LinearLayout layout = new LinearLayout(this);
         layout.setOrientation(LinearLayout.VERTICAL);
-        layout.setPadding(40, 50, 40, 40);
+        layout.setPadding(40, 100, 40, 40);
         GradientDrawable editStyle = new GradientDrawable();
         editStyle.setCornerRadius(18);
         editStyle.setColor(0xFFEEEEEE);

@@ -93,8 +93,8 @@ public class GestionEtudiantActivity extends AppCompatActivity {
         html.append("body { font-family: Arial; padding: 10px; }");
         html.append("table { width: 100%; border-collapse: collapse; }");
         html.append("th, td { border: 1px solid #333; padding: 10px; text-align: left; }");
-        html.append("th { background-color: #4CAF50; color: white; }");
-        html.append(".highlight { background-color: #FFD700; }");
+        html.append("th");
+        html.append(".highlight");
         html.append("</style></head><body>");
         html.append("<h2>Informations Étudiant</h2>");
         html.append("<table>");

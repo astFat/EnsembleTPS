@@ -1,13 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     package="com.example.ensemble_tps">
 
-    <!-- Permissions nécessaires -->
     <uses-feature
         android:name="android.hardware.telephony"
         android:required="false" />
 
-    <uses-permission android:name="android.permission.SEND_SMS"/>
+    <uses-permission android:name="android.permission.SEND_SMS"
+        tools:ignore="SmsAndCallLogPolicy" />
     <uses-permission android:name="android.permission.INTERNET"/>
 
     <application
@@ -16,9 +17,6 @@
         android:label="TPs Mobile - ILCS"
         android:theme="@style/Theme.AppCompat.Light.DarkActionBar">
 
-        <!-- ========================================== -->
-        <!-- ACTIVITÉ PRINCIPALE : Menu -->
-        <!-- ========================================== -->
         <activity
             android:name=".MainActivity"
             android:windowSoftInputMode="adjustResize"
@@ -29,9 +27,6 @@
             </intent-filter>
         </activity>
 
-        <!-- ========================================== -->
-        <!-- TP 1 : Java Sans XML -->
-        <!-- ========================================== -->
         <activity android:name=".ProjetClickActivity"
             android:label="Exercice 1 : ProjetClick"
             android:parentActivityName=".MainActivity"/>
@@ -48,9 +43,7 @@
             android:label="Exercice 4 : Saisie Étudiant"
             android:parentActivityName=".MainActivity"/>
 
-        <!-- ========================================== -->
-        <!-- TP 2 : Android XML -->
-        <!-- ========================================== -->
+
         <activity android:name=".PerimetreCercleActivity"
             android:label="Exercice 1 : Périmètre Cercle"
             android:parentActivityName=".MainActivity"/>
@@ -63,16 +56,11 @@
             android:label="Exercice 3 : Gestion Étudiant"
             android:parentActivityName=".MainActivity"/>
 
-        <!-- ========================================== -->
-        <!-- TP 3 : Calculatrice -->
-        <!-- ========================================== -->
         <activity android:name=".CalculatriceActivity"
             android:label="Calculatrice Android"
             android:parentActivityName=".MainActivity"/>
 
-        <!-- ========================================== -->
-        <!-- TP 4 : SMS et Menus -->
-        <!-- ========================================== -->
+
         <activity android:name=".EnvoieSmsActivity"
             android:label="Envoi de SMS"
             android:parentActivityName=".MainActivity"/>
@@ -81,9 +69,6 @@
             android:label="Menu Options Android"
             android:parentActivityName=".MainActivity"/>
 
-        <!-- ========================================== -->
-        <!-- TP 5 : ListView et Navigation -->
-        <!-- ========================================== -->
         <activity android:name=".ListViewPersoActivity"
             android:label="ListView Personnalisée"
             android:parentActivityName=".MainActivity"/>
@@ -92,10 +77,18 @@
             android:label="Navigation avec Intent"
             android:parentActivityName=".MainActivity"/>
 
-        <!-- Activité secondaire pour la navigation -->
         <activity android:name=".QuestionActivity"
             android:label="Question Activity"
             android:parentActivityName=".NavigationIntentActivity"/>
+
+        <activity android:name=".PopupMenuActivity"
+            android:label="PopupMenu"
+            android:parentActivityName=".MainActivity"/>
+
+        <activity android:name=".NumberPickerActivity"
+            android:label="NumberPicker"
+            android:parentActivityName=".MainActivity"/>
+
 
     </application>
 

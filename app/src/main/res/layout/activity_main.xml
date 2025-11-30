@@ -1,205 +1,39 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#F0F4F8"
-    android:fillViewport="true">
+    android:orientation="vertical"
+    android:background="#F0F4F8">
 
-    <LinearLayout
+    <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="vertical"
-        android:padding="16dp">
+        android:text="TPs Développement Mobile"
+        android:textSize="28sp"
+        android:textStyle="bold"
+        android:textColor="#808080"
+        android:gravity="center"
+        android:padding="20dp"
+        android:background="#FFFFFF"
+        android:elevation="4dp"/>
 
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="TPs Développement Mobile"
-            android:textSize="28sp"
-            android:textStyle="bold"
-            android:textColor="#808080"
-            android:gravity="center"
-            android:layout_marginBottom="10dp"/>
+    <ListView
+        android:id="@+id/listView"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:divider="#BDBDBD"
+        android:dividerHeight="1dp"
+        android:padding="16dp"/>
 
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="TP 1 : Java Sans XML"
-            android:textSize="20sp"
-            android:textStyle="bold"
-            android:textColor="#808080"
-            android:layout_marginTop="25dp"
-            android:layout_marginBottom="10dp"/>
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Réalisé par : ASTITOU Fatima Zzahrae &amp; EL ACHHAB Khadija"
+        android:textSize="12sp"
+        android:textColor="#808080"
+        android:gravity="center"
+        android:padding="16dp"
+        android:background="#FFFFFF"/>
 
-        <Button
-            android:id="@+id/btnExo1Tp1"
-            android:layout_width="match_parent"
-            android:layout_height="65dp"
-            android:text="Exercice 1 : ProjetClick"
-            android:textSize="16sp"
-            android:backgroundTint="#BDBDBD"
-            android:textColor="#000000"
-            android:layout_marginBottom="10dp"/>
-
-        <Button
-            android:id="@+id/btnExo2Tp1"
-            android:layout_width="match_parent"
-            android:layout_height="65dp"
-            android:text="Exercice 2 : Consommation Carburant"
-            android:textSize="16sp"
-            android:backgroundTint="#BDBDBD"
-            android:textColor="#000000"
-            android:layout_marginBottom="10dp"/>
-
-        <Button
-            android:id="@+id/btnExo3Tp1"
-            android:layout_width="match_parent"
-            android:layout_height="65dp"
-            android:text="Exercice 3 : Convertisseur Température"
-            android:textSize="16sp"
-            android:backgroundTint="#BDBDBD"
-            android:textColor="#000000"
-            android:layout_marginBottom="10dp"/>
-
-        <Button
-            android:id="@+id/btnExo4Tp1"
-            android:layout_width="match_parent"
-            android:layout_height="65dp"
-            android:text="Exercice 4 : Saisie Étudiant"
-            android:textSize="16sp"
-            android:backgroundTint="#BDBDBD"
-            android:textColor="#000000"
-            android:layout_marginBottom="20dp"/>
-
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="TP 2 : Interface XML"
-            android:textSize="20sp"
-            android:textStyle="bold"
-            android:textColor="#808080"
-            android:layout_marginTop="10dp"
-            android:layout_marginBottom="10dp"/>
-
-        <Button
-            android:id="@+id/btnExo1Tp2"
-            android:layout_width="match_parent"
-            android:layout_height="65dp"
-            android:text="Exercice 1 : Périmètre Cercle"
-            android:textSize="16sp"
-            android:backgroundTint="#BDBDBD"
-            android:textColor="#000000"
-            android:layout_marginBottom="10dp"/>
-
-        <Button
-            android:id="@+id/btnExo2Tp2"
-            android:layout_width="match_parent"
-            android:layout_height="65dp"
-            android:text="Exercice 2 : Convertisseur Devises"
-            android:textSize="16sp"
-            android:backgroundTint="#BDBDBD"
-            android:textColor="#000000"
-            android:layout_marginBottom="10dp"/>
-
-        <Button
-            android:id="@+id/btnExo3Tp2"
-            android:layout_width="match_parent"
-            android:layout_height="65dp"
-            android:text="Exercice 3 : Gestion Étudiant (Classes)"
-            android:textSize="16sp"
-            android:backgroundTint="#BDBDBD"
-            android:textColor="#000000"
-            android:layout_marginBottom="20dp"/>
-
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="TP 3 : Calculatrice"
-            android:textSize="20sp"
-            android:textStyle="bold"
-            android:textColor="#808080"
-            android:layout_marginTop="10dp"
-            android:layout_marginBottom="10dp"/>
-
-        <Button
-            android:id="@+id/btnCalculatrice"
-            android:layout_width="match_parent"
-            android:layout_height="65dp"
-            android:text="Application Calculatrice"
-            android:textSize="16sp"
-            android:backgroundTint="#BDBDBD"
-            android:textColor="#000000"
-            android:layout_marginBottom="20dp"/>
-
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="TP 4 : SMS et Menus"
-            android:textSize="20sp"
-            android:textStyle="bold"
-            android:textColor="#808080"
-            android:layout_marginTop="10dp"
-            android:layout_marginBottom="10dp"/>
-
-        <Button
-            android:id="@+id/btnEnvoiSms"
-            android:layout_width="match_parent"
-            android:layout_height="65dp"
-            android:text="Envoi de SMS"
-            android:textSize="16sp"
-            android:backgroundTint="#BDBDBD"
-            android:textColor="#000000"
-            android:layout_marginBottom="10dp"/>
-
-        <Button
-            android:id="@+id/btnMenuOptions"
-            android:layout_width="match_parent"
-            android:layout_height="65dp"
-            android:text="Menu Options Android"
-            android:textSize="16sp"
-            android:backgroundTint="#BDBDBD"
-            android:textColor="#000000"
-            android:layout_marginBottom="20dp"/>
-
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="TP 5 : ListView et Navigation"
-            android:textSize="20sp"
-            android:textStyle="bold"
-            android:textColor="#808080"
-            android:layout_marginTop="10dp"
-            android:layout_marginBottom="10dp"/>
-
-        <Button
-            android:id="@+id/btnListViewPerso"
-            android:layout_width="match_parent"
-            android:layout_height="65dp"
-            android:text="ListView Personnalisée"
-            android:textSize="16sp"
-            android:backgroundTint="#BDBDBD"
-            android:textColor="#000000"
-            android:layout_marginBottom="10dp"/>
-
-        <Button
-            android:id="@+id/btnNavigationIntent"
-            android:layout_width="match_parent"
-            android:layout_height="65dp"
-            android:text="Navigation avec Intent"
-            android:textSize="16sp"
-            android:backgroundTint="#BDBDBD"
-            android:textColor="#000000"
-            android:layout_marginBottom="30dp"/>
-
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Réalisé par : ASTITOU Fatima Zzahrae &amp; EL ACHHAB Khadija"
-            android:textSize="12sp"
-            android:textColor="#808080"
-            android:gravity="center"
-            android:layout_marginTop="20dp"
-            android:layout_marginBottom="20dp"/>
-
-    </LinearLayout>
-</androidx.core.widget.NestedScrollView>
+</LinearLayout>
